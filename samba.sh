@@ -6,9 +6,7 @@ sudo apt install -y samba
 sudo systemctl status nmbd
 
 sudo ufw status
-if sudo ufw status | grep -q "inactive"; then
-    sudo ufw enable
-fi
+sudo ufw enable
 sudo ufw allow 'Samba'
 
 mkdir -p ~/Publico/elisa
@@ -58,13 +56,11 @@ iface lo inet loopback
 
 auto enp0s3
 iface enp0s3 inet static
-    address 192.168.0.100
-    netmask 255.255.255.0
-    gateway 192.168.0.1
-    network 192.168.0.0
-    broadcast 192.168.0.255
-    dns-nameservers 192.168.0.10
-    dns-search unah.hn
+address 192.168.0.100
+netmask 255.255.255.0
+gateway 192.168.0.1
+network 192.168.0.0
+broadcast 192.168.0.255
 EOL'
 
 sudo systemctl restart networking
