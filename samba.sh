@@ -51,8 +51,8 @@ sudo systemctl restart nmbd
 sudo bash -c 'cat > /etc/network/interfaces <<EOL
 # interfaces(5) file used by ifup(8) and ifdown(8)
 
-auto lo
-iface lo inet loopback
+#auto lo
+#iface lo inet loopback
 
 auto enp0s3
 iface enp0s3 inet static
@@ -64,5 +64,6 @@ broadcast 192.168.0.255
 EOL'
 
 sudo systemctl restart networking
+sudo systemctl restart nmbd
 
 echo "PRAYGE"
